@@ -1,10 +1,10 @@
-/* Doctors Page - Mobile & Desktop */
+/* Doctors Page - Blue, White, and Yellow */
 .filter-bar {
   background: #FFFFFF;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--primary-blue-border);
   padding: var(--space-md) 0;
   position: sticky;
-  top: 60px;
+  top: 65px;
   z-index: 90;
   box-shadow: var(--shadow-sm);
 }
@@ -27,12 +27,12 @@
   left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-light);
+  color: var(--primary-blue);
 }
 
 .search-input-wrap input {
   width: 100%;
-  padding: 10px 14px 10px 40px;
+  padding: 10px 14px 10px 42px;
   border: 1.5px solid var(--border-color);
   border-radius: var(--radius-full);
   outline: none;
@@ -49,7 +49,6 @@
   font-weight: 700;
   color: var(--text-main);
   font-size: 15px;
-  max-width: 100%;
 }
 
 .toggle-label {
@@ -62,7 +61,7 @@
 }
 
 .toggle-label input { width: 18px; height: 18px; }
-.results-count { font-size: 0.85rem; color: var(--text-light); font-weight: 700; margin-left: auto; }
+.results-count { font-size: 0.85rem; color: var(--text-muted); font-weight: 700; margin-left: auto; }
 
 .doctors-grid {
   display: grid;
@@ -73,7 +72,7 @@
 .doctor-card {
   background: #FFFFFF;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   padding: var(--space-xl);
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -85,13 +84,14 @@
 .doctor-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+  border-color: var(--accent-yellow);
 }
 
 .doctor-avatar {
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #60A5FA 100%);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #3B82F6 100%);
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -99,13 +99,14 @@
   font-size: 1.6rem;
   font-weight: 800;
   margin: 0 auto var(--space-md) auto;
+  border: 3px solid var(--accent-yellow);
   box-shadow: var(--shadow-sm);
 }
 
 .doctor-card h3 { font-size: 1.2rem; margin-bottom: 4px; }
 .doctor-specialty { color: var(--primary-blue); font-weight: 800; font-size: 0.9rem; margin-bottom: var(--space-xs); }
-.doctor-creds { font-size: 0.82rem; color: var(--text-light); margin-bottom: var(--space-md); }
-.doctor-rating { color: var(--accent-yellow); font-size: 0.9rem; margin-bottom: var(--space-md); }
+.doctor-creds { font-size: 0.82rem; color: var(--text-muted); margin-bottom: var(--space-md); }
+.doctor-rating { color: var(--accent-yellow); font-size: 0.92rem; margin-bottom: var(--space-md); }
 .doctor-rating span { color: var(--text-main); font-weight: 700; margin-left: 4px; }
 .doctor-avail { margin-top: auto; padding-top: var(--space-md); border-top: 1px solid var(--border-color); margin-bottom: var(--space-md); }
 .no-results { text-align: center; padding: var(--space-3xl) 0; }

@@ -1,25 +1,31 @@
 :root {
-  --primary-blue: #3A86FF;
-  --primary-blue-dark: #1E3A8A;
-  --primary-blue-light: #EBF3FF;
-  --primary-green: #2EC4B6;
-  --primary-green-soft: #E6FAF8;
-  --accent-yellow: #FFB703;
-  --accent-yellow-light: #FFF8E7;
-  --accent-coral: #FB8500;
-  --accent-purple: #8338EC;
-  --accent-purple-light: #F3EBFF;
-  --emergency-red: #E63946;
-  --emergency-red-hover: #D90429;
-  --bg-page: #F8FAFD;
+  /* Color Palette - Blue, White, and Yellow Theme */
+  --primary-blue: #1D4ED8;
+  --primary-blue-dark: #0F296B;
+  --primary-blue-light: #EFF6FF;
+  --primary-blue-mid: #2563EB;
+  --primary-blue-border: #BFDBFE;
+  
+  --accent-yellow: #F59E0B;
+  --accent-yellow-light: #FEF3C7;
+  --accent-yellow-dark: #B45309;
+  --accent-yellow-hover: #D97706;
+
+  /* Neutrals & Backgrounds */
+  --bg-page: #F8FAFC;
   --bg-card: #FFFFFF;
-  --bg-secondary: #F0F4F8;
-  --text-main: #1D2D44;
-  --text-muted: #576F84;
-  --text-light: #8E9BAE;
+  --bg-secondary: #F1F5F9;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-light: #94A3B8;
   --border-color: #E2E8F0;
-  --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Nunito', sans-serif;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -27,15 +33,21 @@
   --space-xl: 2rem;
   --space-2xl: 3rem;
   --space-3xl: 4.5rem;
+
+  /* Border Radii */
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-xl: 28px;
   --radius-full: 9999px;
-  --shadow-sm: 0 2px 6px rgba(29, 45, 68, 0.05);
-  --shadow-md: 0 6px 18px rgba(58, 134, 255, 0.08);
-  --shadow-lg: 0 12px 30px rgba(58, 134, 255, 0.12);
-  --shadow-xl: 0 20px 40px rgba(29, 45, 68, 0.14);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 41, 107, 0.05);
+  --shadow-md: 0 6px 20px rgba(29, 78, 216, 0.08);
+  --shadow-lg: 0 14px 35px rgba(29, 78, 216, 0.12);
+  --shadow-xl: 0 20px 45px rgba(15, 23, 42, 0.12);
+
+  /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }

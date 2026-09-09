@@ -1,102 +1,132 @@
 'use strict';
 
 function initChatbot() {
-  const toggleBtn = document.getElementById('chat-toggle-btn');
-  const panel = document.getElementById('chat-panel');
-  const closeBtn = document.getElementById('chat-close');
-  const input = document.getElementById('chat-input');
-  const sendBtn = document.getElementById('chat-send');
-  const messagesContainer = document.getElementById('chat-messages');
+  const toggleBtn = $('#chat-toggle-btn');
+  const panel = $('#chat-panel');
+  const closeBtn = $('#chat-close');
+  const input = $('#chat-input');
+  const sendBtn = $('#chat-send');
+  const messagesContainer = $('#chat-messages');
 
   if (!toggleBtn || !panel) return;
 
-  let hasGreeted = false;
+  let greeted = false;
 
   const responses = [
-    { 
-      regex: /appoint|book|schedul|slot/i, 
-      reply: 'You can book an appointment directly through our online form or call our reception at <strong>0861 - 2315777 / 2315776</strong> or WhatsApp at <a href="https://wa.me/919177363774" target="_blank" style="color:#25D366;font-weight:700;">9177363774</a>.' 
+    {
+      keywords: ['appoint', 'book', 'schedul', 'consult'],
+      response: "You can book an appointment by calling our reception directly at **0861 - 2315777** or **0861 - 2315776**, sending a WhatsApp message to **9177363774**, or submitting the online booking form on our Contact page."
     },
-    { 
-      regex: /emergency|urgent|er|ambulance|icu|nicu|picu/i, 
-      reply: '🚨 <strong>24/7 Pediatric Emergency & Ambulance Hotline:</strong> Call <strong style="color:#E63946;">0861 - 2315777</strong> or <strong style="color:#E63946;">9177363774</strong>. Our 50-bed hospital with Level III NICU & PICU is open 24 hours opposite Dist Court, Nellore.' 
+    {
+      keywords: ['emergency', 'urgent', 'casualty', 'trauma', 'serious'],
+      response: "🚨 **24/7 Emergency & NICU Hotline**: Please call **0861 - 2315777** or WhatsApp **9177363774** immediately! Our Emergency Department is open 24 hours at Near Madras Busstand, Opp: District Court, Nellore."
     },
-    { 
-      regex: /scheme|ntr|vaidya|ehs|insurance|cashless|aarogyasri/i, 
-      reply: '✅ <strong>Dr. NTR Vaidya Seva (డా॥ ఎన్.టి.ఆర్ వైద్యసేవ)</strong> and <strong>E.H.S (Employees Health Scheme)</strong> are fully available with cashless treatment for eligible families and government employees!' 
+    {
+      keywords: ['doctor', 'specialist', 'pediatrician', 'surgeon', 'nicu', 'picu'],
+      response: "We have full-time pediatric specialists, neonatologists for NICU, pediatric surgeons, cardiologists, and emergency intensivists available 24/7. Check our Doctors page for the complete roster."
     },
-    { 
-      regex: /location|address|where|direction|map/i, 
-      reply: '📍 We are located at: <strong>Near Madras Busstand, Opp: District Court, Nellore – 524001</strong>. Scan our QR code or click <a href="contact.html" style="text-decoration:underline;font-weight:700;">Contact Page</a> for directions.' 
+    {
+      keywords: ['scheme', 'insurance', 'ntr', 'vaidya', 'ehs', 'free', 'cost'],
+      response: "✅ **Dr. NTR Vaidya Seva & E.H.S Scheme**: We provide cashless and government-supported medical care for eligible families and government employees under Dr. NTR Vaidya Seva and EHS."
     },
-    { 
-      regex: /facility|bed|facilities|ventilator|lab|xray|pharmacy|vaccin|op/i, 
-      reply: '🏥 <strong>Our Facilities:</strong><br>• 50-Bed Pediatric Hospital<br>• NICU (Ventilators, Phototherapy & Exchange Transfusion)<br>• PICU (Heart, Fits, Pneumonia, Toxic Fevers)<br>• 24/7 Ambulance & Pharmacy<br>• 24/7 Lab with Mobile Digital X-Ray<br>• All Childhood Vaccinations<br>• 0-18 Years Complete Pediatric Care' 
+    {
+      keywords: ['location', 'address', 'where', 'place', 'direction', 'court'],
+      response: "📍 **Hospital Address**:\nNear Madras Busstand, Opp: District Court, Nellore – 524001, Andhra Pradesh.\nLandlines: **0861 - 2315777, 2315776**"
     },
-    { 
-      regex: /hour|time|open|timing/i, 
-      reply: '⏰ <strong>Timings:</strong> 24 Hours Emergency, NICU, PICU, Ambulance, Lab & Pharmacy. OPD Consultations available Monday to Saturday: 9:00 AM – 8:00 PM.' 
+    {
+      keywords: ['ambulance', 'transport', 'vehicle'],
+      response: "🚑 **24/7 Ambulance Service**: Equipped with neonatal life support, central oxygen, and emergency transport. Call **9177363774** or **0861 - 2315777** for immediate dispatch."
     },
-    { 
-      regex: /phone|contact|number|call|whatsapp/i, 
-      reply: '📞 <strong>Phone:</strong> 0861 - 2315777, 2315776<br>📱 <strong>WhatsApp:</strong> 9177363774' 
+    {
+      keywords: ['timing', 'hour', 'open', 'time', 'sunday'],
+      response: "⏰ **Hospital Timings**:\n- **Emergency & NICU**: Open 24 Hours / 7 Days\n- **Laboratory & Pharmacy**: 24/7 Non-stop\n- **OPD Consultation**: Monday – Saturday, 9:00 AM – 8:00 PM"
     },
-    { 
-      regex: /hello|hi|hey|namaste/i, 
-      reply: 'నమస్కారం! Hello! 👋 I am <strong>Stella</strong> from Nizam\'s Little Star Children Hospital, Nellore. How can I assist you with your child\'s care today?' 
+    {
+      keywords: ['vaccin', 'immuniz', 'shot'],
+      response: "💉 **Vaccination Clinic**: All newborn and pediatric vaccines from birth to 18 years are available Mon–Sat (9 AM – 8 PM)."
     }
   ];
 
-  function addMessage(htmlText, type = 'bot') {
-    const div = document.createElement('div');
-    div.className = `chat-msg chat-msg-${type}`;
-    div.innerHTML = htmlText;
-    messagesContainer.appendChild(div);
+  const defaultResponse = "I am Stella, your virtual assistant at Nizam's Little Star Children Hospital. How can I help you today? You can ask about our 24/7 Emergency, Doctors, NICU/PICU, Dr. NTR Vaidya Seva scheme, or hospital address in Nellore.";
+
+  function addMessage(text, type = 'bot') {
+    const msg = document.createElement('div');
+    msg.className = `chat-msg chat-msg-${type}`;
+    msg.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    messagesContainer.appendChild(msg);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 
-  function handleSend() {
-    const text = input?.value.trim();
-    if (!text) return;
+  function showTyping() {
+    const typing = document.createElement('div');
+    typing.className = 'chat-msg chat-msg-bot chat-typing';
+    typing.innerHTML = '<span>.</span><span>.</span><span>.</span>';
+    typing.id = 'chat-typing-indicator';
+    messagesContainer.appendChild(typing);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
 
+  function removeTyping() {
+    const el = $('#chat-typing-indicator');
+    if (el) el.remove();
+  }
+
+  function getBotResponse(userText) {
+    const lower = userText.toLowerCase();
+    for (const r of responses) {
+      if (r.keywords.some(k => lower.includes(k))) {
+        return r.response;
+      }
+    }
+    return defaultResponse;
+  }
+
+  function handleSend() {
+    const text = input.value.trim();
+    if (!text) return;
     addMessage(text, 'user');
     input.value = '';
 
+    showTyping();
     setTimeout(() => {
-      let matched = responses.find(r => r.regex.test(text));
-      let reply = matched ? matched.reply : 'Thank you for your message! For immediate assistance, please call our 24/7 helpline at <strong>0861 - 2315777</strong> or WhatsApp <a href="https://wa.me/919177363774" target="_blank">9177363774</a>.';
-      addMessage(reply, 'bot');
-    }, 500);
+      removeTyping();
+      const botReply = getBotResponse(text);
+      addMessage(botReply, 'bot');
+    }, 600);
   }
 
   toggleBtn.addEventListener('click', () => {
     const isHidden = panel.hidden;
     panel.hidden = !isHidden;
-    panel.style.display = isHidden ? 'flex' : 'none';
+    if (isHidden) {
+      if (!greeted) {
+        greeted = true;
+        addMessage("Hello! 👋 I'm **Stella**, your virtual helper at **Nizam's Little Star Children Hospital (Nellore)**. How can I assist you today?", 'bot');
+        
+        const chipsContainer = document.createElement('div');
+        chipsContainer.className = 'chat-quick-replies';
+        chipsContainer.innerHTML = `
+          <button class="chat-chip" data-query="emergency">🚨 24/7 Emergency</button>
+          <button class="chat-chip" data-query="appointment">📅 Book Appointment</button>
+          <button class="chat-chip" data-query="scheme">🏛️ NTR Vaidya Seva</button>
+          <button class="chat-chip" data-query="location">📍 Hospital Location</button>
+        `;
+        messagesContainer.appendChild(chipsContainer);
 
-    if (isHidden && !hasGreeted) {
-      hasGreeted = true;
-      addMessage('నమస్కారం! 👋 Welcome to <strong>Nizam\'s Little Star Children Hospital</strong> (Nellore). How can I help you today?');
-      const chipsDiv = document.createElement('div');
-      chipsDiv.className = 'chat-quick-replies';
-      ['24/7 Emergency', 'NTR Vaidya Seva', 'Hospital Facilities', 'Contact Numbers', 'Location'].forEach(label => {
-        const chip = document.createElement('button');
-        chip.className = 'chat-chip';
-        chip.textContent = label;
-        chip.addEventListener('click', () => {
-          input.value = label;
-          handleSend();
+        $$('.chat-chip', chipsContainer).forEach(chip => {
+          chip.addEventListener('click', () => {
+            input.value = chip.dataset.query;
+            handleSend();
+          });
         });
-        chipsDiv.appendChild(chip);
-      });
-      messagesContainer.appendChild(chipsDiv);
+      }
+      setTimeout(() => input.focus(), 100);
     }
   });
 
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
       panel.hidden = true;
-      panel.style.display = 'none';
     });
   }
 

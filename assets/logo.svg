@@ -1,19 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="420" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 70" width="440" height="70">
   <!-- Emblem Circle Icon on Left -->
-  <circle cx="40" cy="40" r="36" fill="#FFFFFF" stroke="#00A859" stroke-width="3"/>
-  <polygon points="40,18 42,23 47,23 43,26 45,31 40,28 35,31 37,26 33,23 38,23" fill="#2563EB"/>
-  <path d="M 40,32 Q 26,29 14,33 Q 26,36 40,36 Z M 40,32 Q 54,29 66,33 Q 54,36 40,36 Z" fill="#DC2626"/>
-  <line x1="40" y1="28" x2="40" y2="64" stroke="#1E293B" stroke-width="3"/>
-  <path d="M 40,34 Q 48,38 48,44 Q 48,50 40,54 Q 32,58 32,64" fill="none" stroke="#1E293B" stroke-width="2.5"/>
-  <path d="M 40,34 Q 32,38 32,44 Q 32,50 40,54 Q 48,58 48,64" fill="none" stroke="#1E293B" stroke-width="2.5"/>
+  <circle cx="35" cy="35" r="30" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="3"/>
+  <polygon points="35,16 37,21 42,21 38,24 40,29 35,26 30,29 32,24 28,21 33,21" fill="#F59E0B"/>
+  <path d="M 35,28 Q 23,25 12,29 Q 23,32 35,32 Z M 35,28 Q 47,25 58,29 Q 47,32 35,32 Z" fill="#2563EB"/>
+  <line x1="35" y1="24" x2="35" y2="56" stroke="#0F172A" stroke-width="2.5"/>
 
-  <!-- Telugu Name (Primary header from photos) -->
-  <text x="86" y="28" font-family="'Nunito', sans-serif" font-size="20" font-weight="900" fill="#1E40AF">నిజామ్స్ లిటిల్ స్టార్</text>
-  <text x="245" y="28" font-family="'Nunito', sans-serif" font-size="14" font-weight="700" fill="#059669">చిన్న పిల్లల హాస్పిటల్</text>
-  
-  <!-- English Name -->
-  <text x="86" y="50" font-family="'Poppins', sans-serif" font-size="16" font-weight="800" fill="#0F172A">Nizam's <tspan fill="#2563EB">Little Star</tspan> <tspan fill="#DC2626">Children Hospital</tspan></text>
-  
-  <!-- Sub-label: Nellore 24/7 Care -->
-  <text x="86" y="68" font-family="'Nunito', sans-serif" font-size="10.5" font-weight="800" fill="#64748B" letter-spacing="0.5">50-BEDDED 24/7 NICU &amp; PICU • OPP: DIST COURT, NELLORE</text>
+  <!-- Hospital English Name (Blue & Yellow) -->
+  <text x="78" y="30" font-family="'Poppins', sans-serif" font-size="20" font-weight="800" fill="#0F172A">
+    Nizam's <tspan fill="#1D4ED8">Little Star</tspan>
+  </text>
+  <text x="78" y="48" font-family="'Poppins', sans-serif" font-size="13" font-weight="700" fill="#F59E0B" letter-spacing="1.5">
+    CHILDREN HOSPITAL
+  </text>
+  <text x="78" y="62" font-family="'Nunito', sans-serif" font-size="9.5" font-weight="800" fill="#64748B" letter-spacing="0.5">
+    50-BED 24/7 NICU &amp; PICU • OPP: DIST COURT, NELLORE
+  </text>
 </svg>

@@ -1,4 +1,4 @@
-/* Contact Page - Mobile & Desktop */
+/* Contact Page - Blue, White, and Yellow */
 .contact-info-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -10,16 +10,23 @@
   background: #FFFFFF;
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.contact-info-card:hover {
+  border-color: var(--accent-yellow);
+  box-shadow: var(--shadow-md);
 }
 
 .contact-info-icon {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: var(--primary-blue-light);
   color: var(--primary-blue);
+  border: 1px solid var(--primary-blue-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +35,7 @@
 }
 
 .contact-info-card h3 { font-size: 1.15rem; margin-bottom: var(--space-sm); color: var(--primary-blue-dark); }
-.hours-table { width: 100%; font-size: 0.85rem; }
+.hours-table { width: 100%; font-size: 0.86rem; }
 .hours-table td { padding: 4px 0; }
 
 .contact-layout {
@@ -42,12 +49,14 @@
   overflow: hidden;
   box-shadow: var(--shadow-md);
   margin-bottom: var(--space-lg);
+  border: 2px solid var(--primary-blue-border);
 }
 
 .live-chat-cta {
-  background: linear-gradient(135deg, #EBF3FF 0%, #DBEAFE 100%);
+  background: linear-gradient(135deg, #EFF6FF 0%, #FEF3C7 100%);
   padding: var(--space-lg);
   border-radius: var(--radius-lg);
+  border: 1.5px solid var(--accent-yellow);
   display: flex;
   align-items: center;
   gap: var(--space-md);

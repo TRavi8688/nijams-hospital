@@ -67,7 +67,6 @@ function initMobileDrawer() {
 
   if (!hamburgerBtn || !drawer) return;
 
-  // Create backdrop overlay if not already in DOM
   let overlay = $('.mobile-overlay');
   if (!overlay) {
     overlay = document.createElement('div');
@@ -108,7 +107,6 @@ function initMobileDrawer() {
     if (e.key === 'Escape' && isOpen) closeDrawer();
   });
 
-  // Close when clicking any link inside drawer
   $$('a', drawer).forEach(link => {
     link.addEventListener('click', () => {
       closeDrawer();
@@ -153,7 +151,7 @@ function initBackToTop() {
   });
 }
 
-// ─── Mobile Sticky Bottom Action Bar ──────────────────────────────────────────
+// ─── Mobile Sticky Bottom Action Bar (English) ────────────────────────────────
 
 function injectMobileBottomBar() {
   if ($('.mobile-bottom-bar')) return;
@@ -163,15 +161,15 @@ function injectMobileBottomBar() {
   bar.innerHTML = `
     <a href="tel:08612315777" class="mobile-bar-call" aria-label="Call Hospital">
       <i class="fas fa-phone-alt"></i>
-      <span>కాల్ చేయండి</span>
+      <span>Call Now</span>
     </a>
     <a href="https://wa.me/919177363774" target="_blank" class="mobile-bar-whatsapp" aria-label="WhatsApp Support">
       <i class="fab fa-whatsapp"></i>
-      <span>వాట్సాప్</span>
+      <span>WhatsApp</span>
     </a>
     <a href="contact.html" class="mobile-bar-book" aria-label="Book Appointment">
       <i class="fas fa-calendar-check"></i>
-      <span>బుకింగ్</span>
+      <span>Book Now</span>
     </a>
   `;
   document.body.appendChild(bar);
