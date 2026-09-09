@@ -1,14 +1,48 @@
 'use strict';
 
 const tourRooms = [
-  { id: 1, name: 'Main Hospital Building & Facade', icon: 'fa-hospital', desc: '50-bedded pediatric specialty hospital located opposite District Court, Near Madras Busstand, Nellore.' },
-  { id: 2, name: 'Neonatal ICU (NICU Level III)', icon: 'fa-baby', desc: 'Preterm ventilator care, dual phototherapy units, exchange blood transfusion, and multipara monitors.' },
-  { id: 3, name: 'Pediatric ICU (PICU)', icon: 'fa-heartbeat', desc: 'Specialized intensive care for pediatric heart ailments, severe pneumonia, fits, and critical fever management.' },
-  { id: 4, name: '24/7 Oxygen Ambulance', icon: 'fa-ambulance', desc: 'Dedicated pediatric emergency ambulance with oxygen and life support transport services.' },
-  { id: 5, name: '24 Hours Laboratory & Mobile X-Ray', icon: 'fa-vial', desc: 'Mobile digital X-Ray and automatic biochemistry analyzers for instant round-the-clock test results.' },
-  { id: 6, name: 'State-of-the-Art Operation Theatre', icon: 'fa-hospital-user', desc: 'Modern modular surgical suite equipped for general and advanced pediatric surgical procedures.' },
-  { id: 7, name: '24/7 In-House Pharmacy', icon: 'fa-pills', desc: 'Round-the-clock pharmacy stocked with all essential pediatric and neonatal medications.' },
-  { id: 8, name: 'Vaccination & Child Wellness Clinic', icon: 'fa-syringe', desc: 'Complete immunization center for infants, children, and teenagers up to 18 years.' }
+  {
+    id: 1,
+    name: 'Child-Friendly Consultations',
+    category: 'Outpatient Clinic',
+    image: 'assets/gallery-doctor-care.jpg',
+    desc: 'Welcoming consultation suites designed with cheerful colors and child-friendly seating to ensure a stress-free checkup.'
+  },
+  {
+    id: 2,
+    name: 'Neonatal Intensive Care (Level III NICU)',
+    category: 'Intensive Care',
+    image: 'assets/gallery-nicu-care.jpg',
+    desc: 'Advanced infant incubators with preterm ventilator support, phototherapy, exchange transfusion, and 24/7 neonatologist monitoring.'
+  },
+  {
+    id: 3,
+    name: '24/7 Pediatric Emergency Center',
+    category: 'Emergency & Trauma',
+    image: 'assets/gallery-emergency.jpg',
+    desc: 'Round-the-clock emergency casualty with dedicated pediatric resuscitation beds, multi-parameter monitors, and rapid triage.'
+  },
+  {
+    id: 4,
+    name: 'Pediatric Wellness & Play Lounge',
+    category: 'Child Care Area',
+    image: 'assets/gallery-play-area.jpg',
+    desc: 'Colorful recovery lounges equipped with toys, books, and gentle lighting to comfort children and families during hospital visits.'
+  },
+  {
+    id: 5,
+    name: '24/7 Dedicated Oxygen Ambulance',
+    category: 'Emergency Transport',
+    image: 'assets/gallery-emergency.jpg',
+    desc: 'Equipped with transport incubators, neonatal oxygen support, and emergency vital equipment for rapid patient transit.'
+  },
+  {
+    id: 6,
+    name: '24 Hours Digital Lab & Mobile X-Ray',
+    category: 'Diagnostics',
+    image: 'assets/gallery-nicu-care.jpg',
+    desc: 'Fully automated biochemistry analyzers, hematology lab, and mobile bedside digital X-Ray for rapid emergency diagnostic results.'
+  }
 ];
 
 function initTour() {
@@ -27,16 +61,20 @@ function initTour() {
 
   function renderGrid() {
     grid.innerHTML = tourRooms.map((room, idx) => `
-      <div class="tour-thumb reveal visible" data-idx="${idx}">
-        <div class="tour-thumb-display">
-          <i class="fas ${room.icon}"></i>
+      <div class="tour-card reveal visible" data-idx="${idx}">
+        <div class="tour-card-img-wrap">
+          <img src="${room.image}" alt="${room.name}" class="tour-card-img">
+          <div class="tour-card-badge"><i class="fas fa-star"></i> ${room.category}</div>
         </div>
-        <h3>${room.name}</h3>
-        <p>${room.desc}</p>
+        <div class="tour-card-body">
+          <h3>${room.name}</h3>
+          <p>${room.desc}</p>
+          <div class="tour-card-cta">View Details <i class="fas fa-arrow-right"></i></div>
+        </div>
       </div>
     `).join('');
 
-    $$('.tour-thumb', grid).forEach(card => {
+    $$('.tour-card', grid).forEach(card => {
       card.addEventListener('click', () => {
         openLightbox(parseInt(card.dataset.idx, 10));
       });
@@ -48,7 +86,9 @@ function initTour() {
     const room = tourRooms[currentIdx];
     if (roomName) roomName.textContent = room.name;
     if (roomDesc) roomDesc.textContent = room.desc;
-    if (roomDisplay) roomDisplay.innerHTML = `<i class="fas ${room.icon}"></i>`;
+    if (roomDisplay) {
+      roomDisplay.innerHTML = `<img src="${room.image}" alt="${room.name}">`;
+    }
     if (overlay) overlay.hidden = false;
   }
 

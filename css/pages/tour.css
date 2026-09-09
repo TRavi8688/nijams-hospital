@@ -1,41 +1,99 @@
-/* Tour Page - Blue, White, and Yellow */
+/* Tour Page Styles - Modern Blue, White, and Yellow Theme */
+
 .tour-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
-.tour-thumb {
+.tour-card {
   background: #FFFFFF;
   border-radius: var(--radius-lg);
   border: 1.5px solid var(--border-color);
-  padding: var(--space-lg);
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
 }
 
-.tour-thumb:hover {
-  transform: translateY(-4px);
+.tour-card:hover {
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
   border-color: var(--accent-yellow);
 }
 
-.tour-thumb-display {
-  height: 180px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #0F296B 0%, #1D4ED8 50%, #F59E0B 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFFFF;
-  font-size: 2.5rem;
-  margin-bottom: var(--space-md);
+.tour-card-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: var(--primary-blue-light);
 }
 
-.tour-thumb h3 { font-size: 1.1rem; color: var(--primary-blue-dark); margin-bottom: 4px; }
-.tour-thumb p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0; }
+.tour-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
 
+.tour-card:hover .tour-card-img {
+  transform: scale(1.05);
+}
+
+.tour-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(15, 41, 107, 0.85);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  border: 1px solid var(--accent-yellow);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tour-card-badge i { color: var(--accent-yellow); }
+
+.tour-card-body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tour-card-body h3 {
+  font-size: 1.15rem;
+  color: #0F296B;
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+
+.tour-card-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  flex: 1;
+  line-height: 1.5;
+}
+
+.tour-card-cta {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+/* Lightbox Modal */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -49,48 +107,76 @@
 }
 
 .lightbox-overlay[hidden] { display: none; }
+
 .lightbox-content {
   background: #FFFFFF;
-  max-width: 600px;
+  max-width: 620px;
   width: 100%;
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   border: 2px solid var(--accent-yellow);
+  position: relative;
 }
 
-.lightbox-room-display {
-  height: 280px;
-  background: linear-gradient(135deg, #0F296B 0%, #1D4ED8 100%);
+.lightbox-img-wrap {
+  height: 320px;
+  background: #0F296B;
+  overflow: hidden;
+}
+
+.lightbox-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lightbox-caption {
+  padding: var(--space-xl);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: rgba(15, 23, 42, 0.7);
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
-  font-size: 4rem;
+  z-index: 10;
 }
 
-.lightbox-caption { padding: var(--space-xl); }
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-}
 .lightbox-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   border: none;
   color: #fff;
-  font-size: 1.5rem;
-  padding: 12px 18px;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
 }
+
+.lightbox-nav:hover { background: rgba(255, 255, 255, 0.5); }
 .lightbox-prev { left: 20px; }
 .lightbox-next { right: 20px; }
+
+@media (max-width: 600px) {
+  .tour-grid { grid-template-columns: 1fr; }
+  .lightbox-img-wrap { height: 220px; }
+  .lightbox-caption { padding: var(--space-md); }
+}
