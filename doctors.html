@@ -49,7 +49,16 @@
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+        
+      <div class="lang-select-dropdown" id="lang-select-dropdown">
+        <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Select Language">
+          <i class="fas fa-globe"></i>
+          <span>Language</span>
+          <i class="fas fa-chevron-down" style="font-size:0.75rem;margin-left:4px;"></i>
+        </button>
+        <div class="lang-menu" id="lang-menu"></div>
+      </div>
+      <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-check"></i> Book Appointment</a>
         <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -68,6 +77,11 @@
       <li><a href="contact.html">Contact Us</a></li>
       <li><a href="tel:08612315777" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call: 0861-2315777</a></li>
     </ul>
+  
+    <div class="mobile-lang-section">
+      <h4><i class="fas fa-globe"></i> Select Language (భాషను ఎంచుకోండి)</h4>
+      <div class="mobile-lang-grid" id="mobile-lang-grid"></div>
+    </div>
   </div>
 
   <main id="main-content">
@@ -199,5 +213,7 @@
   <script src="js/main.js"></script>
   <script src="js/doctors.js"></script>
   <script src="js/chatbot.js"></script>
+  <div id="google_translate_element" style="display:none;"></div>
+  <script src="js/language.js"></script>
 </body>
 </html>
