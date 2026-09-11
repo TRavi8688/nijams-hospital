@@ -120,10 +120,10 @@ function initDoctors() {
 
     grid.innerHTML = filtered.map(doc => `
       <div class="doctor-card reveal visible">
-        <div class="doctor-avatar">${doc.initials}</div>
-        <h3>${doc.name}</h3>
+        <div class="doctor-avatar notranslate" translate="no">${doc.initials}</div>
+        <h3 class="notranslate" translate="no">${doc.name}</h3>
         <div class="doctor-specialty">${doc.specialty}</div>
-        <div class="doctor-creds">${doc.credentials} • ${doc.experience}</div>
+        <div class="doctor-creds"><span class="notranslate" translate="no">${doc.credentials}</span> • ${doc.experience}</div>
         <div class="doctor-rating"><i class="fas fa-star"></i> ${doc.rating} <span>(Rating)</span></div>
         <div class="doctor-avail">
           <span class="badge badge-yellow">Available: ${doc.days.join(', ')}</span>
