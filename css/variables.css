@@ -1,53 +1,134 @@
+/* ==========================================================================
+   NIJAM'S HOSPITAL — Design Token System (variables.css)
+   Premium UI Edition · Gold + Navy Palette
+   ========================================================================== */
+
 :root {
-  /* Color Palette - Blue, White, and Yellow Theme */
-  --primary-blue: #1D4ED8;
-  --primary-blue-dark: #0F296B;
-  --primary-blue-light: #EFF6FF;
-  --primary-blue-mid: #2563EB;
-  --primary-blue-border: #BFDBFE;
-  
-  --accent-yellow: #F59E0B;
-  --accent-yellow-light: #FEF3C7;
-  --accent-yellow-dark: #B45309;
-  --accent-yellow-hover: #D97706;
 
-  /* Neutrals & Backgrounds */
-  --bg-page: #F8FAFC;
-  --bg-card: #FFFFFF;
+  /* ── Brand Core ──────────────────────────────────────────────────────── */
+  --primary-blue:        #1D4ED8;   /* CTA blue              */
+  --primary-blue-dark:   #0F296B;   /* Deep navy              */
+  --primary-blue-light:  #EFF6FF;   /* Tint wash              */
+  --primary-blue-mid:    #2563EB;   /* Mid-range interactive  */
+  --primary-blue-border: #BFDBFE;   /* Subtle ring            */
+
+  --accent-yellow:       #F59E0B;   /* Gold / accent          */
+  --accent-yellow-light: #FEF3C7;   /* Gold wash              */
+  --accent-yellow-dark:  #B45309;   /* Deep amber             */
+  --accent-yellow-hover: #D97706;   /* Hover amber            */
+
+  /* ── Neutrals & Surfaces ─────────────────────────────────────────────── */
+  --bg-page:      #F8FAFC;
+  --bg-card:      #FFFFFF;
   --bg-secondary: #F1F5F9;
-  --text-main: #0F172A;
-  --text-muted: #475569;
-  --text-light: #94A3B8;
+  --text-main:    #0F172A;
+  --text-muted:   #475569;
+  --text-light:   #94A3B8;
   --border-color: #E2E8F0;
-  --white: #FFFFFF;
+  --white:        #FFFFFF;
 
-  /* Typography */
+  /* ── Typography ──────────────────────────────────────────────────────── */
   --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body:    'Nunito',  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
+  /* ── Spacing Scale ───────────────────────────────────────────────────── */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
   --space-2xl: 3rem;
   --space-3xl: 4.5rem;
 
-  /* Border Radii */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  /* ── Border Radii ────────────────────────────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(15, 41, 107, 0.05);
-  --shadow-md: 0 6px 20px rgba(29, 78, 216, 0.08);
-  --shadow-lg: 0 14px 35px rgba(29, 78, 216, 0.12);
-  --shadow-xl: 0 20px 45px rgba(15, 23, 42, 0.12);
+  /* ── Classic Shadows (preserved + deepened) ──────────────────────────── */
+  --shadow-sm: 0 2px 8px  rgba(15,  41, 107, 0.07);
+  --shadow-md: 0 6px 20px rgba(29,  78, 216, 0.10);
+  --shadow-lg: 0 14px 35px rgba(29, 78, 216, 0.14);
+  --shadow-xl: 0 20px 45px rgba(15,  23,  42, 0.15);
 
-  /* Transitions */
-  --transition-fast: 0.2s ease;
+  /* ── Glow Shadows (new) ──────────────────────────────────────────────── */
+  /* Vivid blue halo — perfect for focused buttons & cards */
+  --shadow-glow-blue:
+    0 0 0   1px  rgba(29, 78, 216, 0.08),
+    0 4px  16px  rgba(29, 78, 216, 0.25),
+    0 12px 32px  rgba(29, 78, 216, 0.18);
+
+  /* Warm gold halo — for accent badges, CTA rings, stat numbers */
+  --shadow-glow-gold:
+    0 0 0   1px  rgba(245, 158, 11, 0.10),
+    0 4px  16px  rgba(245, 158, 11, 0.30),
+    0 12px 32px  rgba(245, 158, 11, 0.20);
+
+  /* Deep combined glow — for hero cards and featured sections */
+  --shadow-glow-lg:
+    0 0  0   1px  rgba(15,  41, 107, 0.06),
+    0 8px 24px    rgba(29,  78, 216, 0.20),
+    0 20px 60px   rgba(15,  41, 107, 0.22),
+    0 0  40px     rgba(245, 158, 11, 0.08);
+
+  /* ── Multi-Layer Gradients (new) ─────────────────────────────────────── */
+  /* Hero background — rich navy-to-blue sweep with a gold radial warmth   */
+  --gradient-hero:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(245,158,11,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 10% 80%, rgba(29,78,216,0.20)  0%, transparent 55%),
+    linear-gradient(135deg, #0F296B 0%, #1D4ED8 55%, #2563EB 100%);
+
+  /* Gold shimmer — for badges, stat bar fills, dividers */
+  --gradient-gold:
+    linear-gradient(90deg,
+      #B45309 0%,
+      #F59E0B 35%,
+      #FDE68A 60%,
+      #F59E0B 80%,
+      #B45309 100%);
+
+  /* Glass surface — frosted blue-tinted panel */
+  --gradient-glass:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+
+  /* Navy depth — section/footer backgrounds */
+  --gradient-navy:
+    linear-gradient(160deg,
+      #0F296B 0%,
+      #1a3580 40%,
+      #1D4ED8 100%);
+
+  /* ── Glassmorphism Tokens (new) ──────────────────────────────────────── */
+  --glass-bg:     rgba(255, 255, 255, 0.14);
+  --glass-border: rgba(255, 255, 255, 0.28);
+
+  /* ── Shimmer Token (new) ─────────────────────────────────────────────── */
+  /* The bright sweep used in the shimmer-btn / shimmer animations          */
+  --shimmer-color:
+    linear-gradient(
+      105deg,
+      transparent    30%,
+      rgba(255,255,255,0.55) 50%,
+      transparent    70%
+    );
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  /* Preserved originals */
+  --transition-fast:   0.2s ease;
   --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* New premium curves */
+
+  /* Spring — snappy overshoot, great for cards lifting on hover */
+  --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Bounce — playful drop / scale-in, use for modals & badges */
+  --transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
 }

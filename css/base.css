@@ -1,14 +1,43 @@
+/* ==========================================================================
+   BASE — Premium Rich Edition
+   Brand: Navy Blue (#0F296B / #1D4ED8) + Gold (#F59E0B)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CUSTOM SCROLLBAR — thin, blue/gold gradient
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1D4ED8 0%, #F59E0B 100%);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0F296B 0%, #D97706 100%);
+}
+/* Firefox */
+html { scrollbar-width: thin; scrollbar-color: #1D4ED8 #F1F5F9; }
+
+/* --------------------------------------------------------------------------
+   2. RESET & BOX MODEL
+   -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* --------------------------------------------------------------------------
+   3. ROOT
+   -------------------------------------------------------------------------- */
 html {
   font-size: 16px;
   scroll-behavior: smooth;
 }
 
+/* --------------------------------------------------------------------------
+   4. BODY
+   -------------------------------------------------------------------------- */
 body {
   font-family: var(--font-body);
   color: var(--text-main);
@@ -18,11 +47,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* --------------------------------------------------------------------------
+   5. FOCUS RING
+   -------------------------------------------------------------------------- */
 :focus-visible {
   outline: 3px solid var(--primary-blue);
   outline-offset: 2px;
 }
 
+/* --------------------------------------------------------------------------
+   6. ACCESSIBILITY HELPERS
+   -------------------------------------------------------------------------- */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -49,17 +84,31 @@ body {
   height: auto;
 }
 
+/* --------------------------------------------------------------------------
+   7. TYPOGRAPHY — bigger, bolder, premium depth
+   -------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--text-main);
   line-height: 1.25;
+  /* Subtle depth shadow */
+  text-shadow: 0 1px 3px rgba(15, 41, 107, 0.07);
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.2rem, 2.5vw, 1.55rem); }
-h4 { font-size: 1.15rem; }
+h1 {
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(15, 41, 107, 0.12);
+}
+h2 {
+  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+h3 { font-size: clamp(1.25rem, 2.6vw, 1.6rem); font-weight: 700; }
+h4 { font-size: 1.15rem; font-weight: 700; }
 
 p {
   margin-bottom: 1rem;
@@ -76,9 +125,7 @@ a:hover {
   color: var(--primary-blue-dark);
 }
 
-ul, ol {
-  list-style: none;
-}
+ul, ol { list-style: none; }
 
 img, svg {
   max-width: 100%;
@@ -91,6 +138,9 @@ button, input, select, textarea {
   font-size: inherit;
 }
 
+/* --------------------------------------------------------------------------
+   8. LAYOUT HELPERS
+   -------------------------------------------------------------------------- */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -102,12 +152,26 @@ button, input, select, textarea {
   padding: var(--space-3xl) 0;
 }
 
+/* --------------------------------------------------------------------------
+   9. SECTION HEADER
+   -------------------------------------------------------------------------- */
 .section-header {
   text-align: center;
   max-width: 720px;
   margin: 0 auto var(--space-2xl) auto;
 }
 
+/* --------------------------------------------------------------------------
+   10. SHIMMER KEYFRAME (shared)
+   -------------------------------------------------------------------------- */
+@keyframes premium-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* --------------------------------------------------------------------------
+   11. SECTION EYEBROW — gradient pill + gold left-accent bar + shimmer
+   -------------------------------------------------------------------------- */
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -115,21 +179,55 @@ button, input, select, textarea {
   font-size: 0.85rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
   color: var(--primary-blue);
-  background: var(--primary-blue-light);
-  border: 1px solid var(--primary-blue-border);
-  padding: 6px 16px;
+
+  /* Multi-layer gradient background */
+  background: linear-gradient(
+    135deg,
+    rgba(29, 78, 216, 0.07) 0%,
+    rgba(245, 158, 11, 0.12) 50%,
+    rgba(29, 78, 216, 0.07) 100%
+  );
+  background-size: 200% auto;
+  animation: premium-shimmer 3.5s linear infinite;
+
+  /* Gold left accent bar via border-left */
+  border: 1px solid rgba(29, 78, 216, 0.18);
+  border-left: 3px solid #F59E0B;
+
+  padding: 6px 18px 6px 14px;
   border-radius: var(--radius-full);
   margin-bottom: var(--space-sm);
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.14),
+    0 2px 10px rgba(29, 78, 216, 0.09);
+  position: relative;
+  overflow: hidden;
 }
 
+/* --------------------------------------------------------------------------
+   12. TEXT GRADIENT — navy → blue → gold → blue → navy sweep
+   -------------------------------------------------------------------------- */
 .text-gradient {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-yellow) 100%);
+  background: linear-gradient(
+    120deg,
+    #0F296B 0%,
+    #1D4ED8 25%,
+    #F59E0B 55%,
+    #1D4ED8 78%,
+    #0F296B 100%
+  );
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: premium-shimmer 5s linear infinite;
 }
 
+/* --------------------------------------------------------------------------
+   13. UTILITY
+   -------------------------------------------------------------------------- */
 .text-center {
   text-align: center;
 }

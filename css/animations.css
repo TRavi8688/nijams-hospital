@@ -1,10 +1,254 @@
-@keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-12px) rotate(1.5deg); } }
-@keyframes waveArm { 0%, 100% { transform: rotate(0deg); transform-origin: 130px 120px; } 25% { transform: rotate(-20deg); transform-origin: 130px 120px; } 75% { transform: rotate(15deg); transform-origin: 130px 120px; } }
-@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.mascot-svg.waving #mascot-arm { animation: waveArm 1s ease-in-out infinite; }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* ==========================================================================
+   NIJAM'S HOSPITAL — Animation & Motion Library (animations.css)
+   Premium UI Edition · All keyframes + utility classes
+   ========================================================================== */
+
+
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  1. PRESERVED CORE KEYFRAMES                                        ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+/* Gentle floating — hero mascot / icon cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0px)   rotate(0deg);   }
+  50%       { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+/* Mascot arm wave */
+@keyframes waveArm {
+  0%, 100% { transform: rotate(0deg);   transform-origin: 130px 120px; }
+  25%       { transform: rotate(-20deg); transform-origin: 130px 120px; }
+  75%       { transform: rotate(15deg);  transform-origin: 130px 120px; }
+}
+
+/* Simple slide-up entrance (short, snappy) */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  2. NEW PREMIUM KEYFRAMES                                           ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+/* ── Shimmer Sweep ───────────────────────────────────────────────────────
+   Bright gloss band slides left→right across a surface.
+   Use on buttons, cards, or any element that needs a "shine" moment.    */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── Pulse Glow ──────────────────────────────────────────────────────────
+   Alternates between blue and gold aura — perfect for emergency numbers,
+   live-chat buttons, or "urgent" badges.                                */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow:
+      0 0  0px  0px  rgba(29,  78, 216, 0.00),
+      0 0  18px 4px  rgba(29,  78, 216, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 0  0px  0px  rgba(245, 158, 11, 0.00),
+      0 0  24px 8px  rgba(245, 158, 11, 0.50);
+  }
+}
+
+/* ── Gradient Shift ──────────────────────────────────────────────────────
+   Animates background-position across an oversized gradient, making
+   text or banner backgrounds "flow" with living colour.                 */
+@keyframes gradientShift {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+
+/* ── Fade-In Up ──────────────────────────────────────────────────────────
+   Smooth staggerable entrance with a gentle upward drift.
+   Use with animation-delay for sequential reveals.                      */
+@keyframes fadeInUp {
+  from {
+    opacity:   0;
+    transform: translateY(28px) scale(0.98);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0)    scale(1);
+  }
+}
+
+/* ── Scale In ────────────────────────────────────────────────────────────
+   Spring-y pop entrance — ideal for modals, tooltips, and dropdowns.    */
+@keyframes scaleIn {
+  0%   { opacity: 0; transform: scale(0.82) translateY(10px); }
+  70%  { opacity: 1; transform: scale(1.03) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+/* ── Border Glow ─────────────────────────────────────────────────────────
+   Pulses an outer ring (outline) between blue and gold.
+   Great for "featured" card frames or selected form inputs.             */
+@keyframes borderGlow {
+  0%, 100% {
+    outline: 3px solid rgba(29,  78, 216, 0.55);
+    outline-offset: 2px;
+  }
+  50% {
+    outline: 3px solid rgba(245, 158, 11, 0.70);
+    outline-offset: 4px;
+  }
+}
+
+/* ── Number Roll ─────────────────────────────────────────────────────────
+   Gives stat counters a quick snap-in feel as they count up.
+   Pair with JS counter logic; this handles the visual micro-bounce.     */
+@keyframes numberRoll {
+  0%   { opacity: 0; transform: translateY(12px) scaleY(1.1); filter: blur(2px); }
+  60%  { opacity: 1; transform: translateY(-3px) scaleY(0.97); filter: blur(0);  }
+  100% { opacity: 1; transform: translateY(0)    scaleY(1);    filter: blur(0);  }
+}
+
+
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  3. WIRED CLASS — Mascot arm                                        ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+.mascot-svg.waving #mascot-arm {
+  animation: waveArm 1s ease-in-out infinite;
+}
+
+
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  4. SCROLL-REVEAL UTILITY (preserved, unchanged)                    ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+.reveal {
+  opacity:   0;
+  transform: translateY(30px);
+  transition:
+    opacity   0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity:   1;
+  transform: translateY(0);
+}
+
+
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  5. PREMIUM UTILITY CLASSES                                         ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+/* ── .shimmer-btn ─────────────────────────────────────────────────────────
+   Add to any <button> or <a> to get a travelling gloss sweep on hover.
+   Works over any background — the pseudo-element carries the shimmer.   */
+.shimmer-btn {
+  position:   relative;
+  overflow:   hidden;
+  isolation:  isolate;
+}
+
+.shimmer-btn::after {
+  content:            '';
+  position:           absolute;
+  inset:              0;
+  background:
+    linear-gradient(
+      105deg,
+      transparent    25%,
+      rgba(255,255,255,0.50) 50%,
+      transparent    75%
+    );
+  background-size:    250% 100%;
+  background-position: -200% center;
+  pointer-events:     none;
+  border-radius:      inherit;
+  opacity:            0;
+  transition:         opacity 0.3s ease;
+}
+
+.shimmer-btn:hover::after,
+.shimmer-btn:focus-visible::after {
+  opacity:   1;
+  animation: shimmer 0.85s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+
+/* ── .pulse-glow ─────────────────────────────────────────────────────────
+   Infinite blue ↔ gold aura pulse.
+   Perfect for emergency tel links, live indicators, and urgent CTAs.    */
+.pulse-glow {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+  border-radius: inherit;
+}
+
+
+/* ── .gradient-shift ─────────────────────────────────────────────────────
+   Living gradient background — attach to hero headlines or section bands.
+   The oversized gradient flows continuously.                             */
+.gradient-shift {
+  background:
+    linear-gradient(
+      270deg,
+      #0F296B,
+      #1D4ED8,
+      #2563EB,
+      #F59E0B,
+      #D97706,
+      #1D4ED8,
+      #0F296B
+    );
+  background-size:   400% 400%;
+  animation:         gradientShift 8s ease infinite;
+
+  /* When used on text, also set: */
+  -webkit-background-clip: text;
+  background-clip:          text;
+  -webkit-text-fill-color:  transparent;
+  color:                    transparent;
+}
+
+
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  6. REDUCED-MOTION SAFETY NET (preserved + extended)                ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-  .reveal { opacity: 1 !important; transform: none !important; }
+
+  /* Kill all motion globally */
+  *, *::before, *::after {
+    animation-duration:       0.01ms !important;
+    animation-iteration-count: 1     !important;
+    transition-duration:      0.01ms !important;
+    scroll-behavior:          auto   !important;
+  }
+
+  /* Restore reveal visibility without animation */
+  .reveal {
+    opacity:   1 !important;
+    transform: none !important;
+  }
+
+  /* Disable shimmer pseudo-element */
+  .shimmer-btn::after {
+    display: none;
+  }
+
+  /* Flatten gradient-shift to a static colour */
+  .gradient-shift {
+    animation: none;
+    background: var(--primary-blue-dark);
+    -webkit-text-fill-color: var(--white);
+    color: var(--white);
+  }
+
+  /* Remove pulse glow */
+  .pulse-glow {
+    animation: none;
+    box-shadow: none;
+  }
+
 }

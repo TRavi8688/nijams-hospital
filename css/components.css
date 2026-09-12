@@ -281,54 +281,78 @@
 }
 
 /* Buttons (Blue, White, Yellow) */
+/* Buttons (Blue, White, Yellow - Rich Edition) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.95rem;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border-radius: var(--radius-full);
   border: 2px solid transparent;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 14px rgba(15, 41, 107, 0.1);
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.btn:hover::after {
+  left: 150%;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2.5px);
+  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.2);
 }
 
 .btn-primary {
-  background: var(--primary-blue);
+  background: linear-gradient(135deg, #0F296B 0%, #1D4ED8 100%);
   color: #FFFFFF !important;
 }
 .btn-primary:hover {
-  background: var(--primary-blue-dark);
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+  box-shadow: 0 8px 25px rgba(29, 78, 216, 0.35);
 }
 
 .btn-yellow {
-  background: var(--accent-yellow);
-  color: #0F172A !important;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF !important;
   font-weight: 800;
 }
 .btn-yellow:hover {
-  background: var(--accent-yellow-hover);
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
   color: #FFFFFF !important;
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
 }
 
 .btn-outline {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
   border-color: var(--primary-blue);
   color: var(--primary-blue) !important;
 }
 .btn-outline:hover {
-  background: var(--primary-blue-light);
+  background: var(--primary-blue);
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.25);
 }
 
 .btn-outline-white {
@@ -339,6 +363,7 @@
 .btn-outline-white:hover {
   background: #FFFFFF;
   color: var(--primary-blue) !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 .btn-white {
@@ -349,28 +374,31 @@
 .btn-white:hover {
   background: var(--accent-yellow-light);
   color: var(--primary-blue-dark) !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
 .btn-emergency {
-  background: var(--accent-yellow);
-  color: #0F172A !important;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF !important;
   font-weight: 800;
 }
 .btn-emergency:hover {
-  background: var(--accent-yellow-hover);
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
   color: #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
 }
 
 .btn-whatsapp {
-  background: #0B6477;
+  background: linear-gradient(135deg, #0B6477 0%, #084C5B 100%);
   color: #FFFFFF !important;
 }
 .btn-whatsapp:hover {
-  background: #084C5B;
+  background: linear-gradient(135deg, #084C5B 0%, #053540 100%);
+  box-shadow: 0 6px 20px rgba(11, 100, 119, 0.35);
 }
 
-.btn-sm { padding: 8px 18px; font-size: 0.85rem; }
-.btn-lg { padding: 14px 28px; font-size: 1.05rem; }
+.btn-sm { padding: 8px 20px; font-size: 0.85rem; }
+.btn-lg { padding: 14px 30px; font-size: 1.05rem; }
 
 /* Badges (Blue, White, Yellow) */
 .badge {
