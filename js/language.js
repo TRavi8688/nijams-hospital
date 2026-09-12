@@ -186,19 +186,37 @@ function changeLanguage(langCode) {
 // Populate and setup custom language selector
 function initCustomLanguageSelector() {
   const currentLang = localStorage.getItem('selected_lang') || 'en';
+  const activeLangObj = indianLanguages.find(l => l.code === currentLang) || indianLanguages[0];
 
   // 1. Desktop Dropdown Setup
   const desktopSelector = document.getElementById('lang-select-dropdown');
   const desktopBtn = document.getElementById('lang-toggle-btn');
   const desktopMenu = document.getElementById('lang-menu');
 
+  if (desktopBtn) {
+    desktopBtn.innerHTML = `
+      <i class="fas fa-globe"></i>
+      <span>Language</span>
+      <span class="lang-btn-current">${activeLangObj.native}</span>
+      <i class="fas fa-chevron-down" style="font-size:0.7rem;margin-left:2px;opacity:0.8;"></i>
+    `;
+  }
+
   if (desktopMenu) {
-    desktopMenu.innerHTML = indianLanguages.map(lang => `
-      <button class="lang-option ${lang.code === currentLang ? 'active' : ''}" data-code="${lang.code}">
-        <span class="lang-native">${lang.native}</span>
-        <span class="lang-name">${lang.name}</span>
-      </button>
-    `).join('');
+    desktopMenu.innerHTML = `
+      <div class="lang-menu-header">
+        <span><i class="fas fa-language"></i> Select Language</span>
+        <small style="color:var(--text-muted);font-weight:700;">${indianLanguages.length} Languages</small>
+      </div>
+      <div class="lang-menu-grid">
+        ${indianLanguages.map(lang => `
+          <button class="lang-option ${lang.code === currentLang ? 'active' : ''}" data-code="${lang.code}">
+            <span class="lang-native">${lang.native}</span>
+            <span class="lang-name">${lang.name}</span>
+          </button>
+        `).join('')}
+      </div>
+    `;
 
     // Toggle dropdown open
     if (desktopBtn) {
