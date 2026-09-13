@@ -4,12 +4,13 @@ const doctorsData = [
   {
     id: 1,
     name: 'Dr. S. Nizamuddin',
-    specialty: 'Neonatal ICU (NICU) & Pediatrics',
+    specialty: 'Chief Consultant - Neonatal ICU (NICU) & Pediatrics',
     credentials: 'MBBS, MD (Pediatrics), Fellowship in Neonatology',
-    experience: '18+ Years Experience',
+    experience: '20+ Years Experience',
     rating: '5.0',
     days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    initials: 'SN'
+    initials: 'SN',
+    image: 'assets/founder-doctor.jpg'
   },
   {
     id: 2,
@@ -120,7 +121,12 @@ function initDoctors() {
 
     grid.innerHTML = filtered.map(doc => `
       <div class="doctor-card reveal visible">
-        <div class="doctor-avatar notranslate" translate="no">${doc.initials}</div>
+        <div class="doctor-avatar notranslate" translate="no" style="overflow:hidden;padding:0;">
+          ${doc.image 
+            ? `<img src="${doc.image}" alt="${doc.name}" style="width:100%;height:100%;object-fit:cover;object-position:center top;">`
+            : doc.initials
+          }
+        </div>
         <h3 class="notranslate" translate="no">${doc.name}</h3>
         <div class="doctor-specialty">${doc.specialty}</div>
         <div class="doctor-creds"><span class="notranslate" translate="no">${doc.credentials}</span> • ${doc.experience}</div>
