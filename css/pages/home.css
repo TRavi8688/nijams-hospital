@@ -226,7 +226,7 @@
   border-radius: 24px;
   padding: var(--space-2xl);
   box-shadow: 0 20px 60px rgba(29, 78, 216, 0.14), 0 0 0 1.5px rgba(29, 78, 216, 0.15);
-  margin-top: -40px;
+  margin-top: var(--space-xl);
   position: relative;
   z-index: 10;
 }
@@ -440,7 +440,7 @@
     margin-top: 14px;
   }
   .float-badge { position: static; font-size: 0.78rem; padding: 6px 14px; }
-  .appointment-widget { margin-top: 15px; padding: var(--space-md); }
+  .appointment-widget { margin-top: var(--space-xl); padding: var(--space-lg); }
   .widget-fields { grid-template-columns: 1fr; }
   .departments-grid { grid-template-columns: 1fr; }
   .cta-band { text-align: center; }
