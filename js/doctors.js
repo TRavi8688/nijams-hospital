@@ -121,12 +121,10 @@ function initDoctors() {
 
     grid.innerHTML = filtered.map(doc => `
       <div class="doctor-card reveal visible">
-        <div class="doctor-avatar notranslate" translate="no" style="overflow:hidden;padding:0;">
-          ${doc.image 
-            ? `<img src="${doc.image}" alt="${doc.name}" style="width:100%;height:100%;object-fit:cover;object-position:center top;">`
-            : doc.initials
-          }
-        </div>
+        ${doc.image 
+          ? `<div class="doctor-avatar notranslate" translate="no" style="width:130px;height:165px;border-radius:18px;overflow:hidden;padding:0;"><img src="${doc.image}" alt="${doc.name}" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>`
+          : `<div class="doctor-avatar notranslate" translate="no">${doc.initials}</div>`
+        }
         <h3 class="notranslate" translate="no">${doc.name}</h3>
         <div class="doctor-specialty">${doc.specialty}</div>
         <div class="doctor-creds"><span class="notranslate" translate="no">${doc.credentials}</span> • ${doc.experience}</div>
