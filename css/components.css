@@ -592,7 +592,7 @@
 .chat-input-area input { flex: 1; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-full); outline: none; font-size: 14px; }
 .chat-input-area button { background: var(--primary-blue); color: #fff; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; }
 
-/* Scheme Card (Dr. NTR Vaidya Seva & EHS) */
+/* Feature Card / Announcement Card */
 .scheme-card {
   background: linear-gradient(135deg, #FEF3C7 0%, #FFFFFF 100%);
   border: 2px solid var(--accent-yellow);

@@ -22,12 +22,12 @@ function initChatbot() {
       response: "🚨 **24/7 Emergency & NICU Hotline**: Please call **0861 - 2315777** or WhatsApp **9177363774** immediately! Our Emergency Department is open 24 hours at Near Madras Busstand, Opp: District Court, Nellore."
     },
     {
-      keywords: ['doctor', 'specialist', 'pediatrician', 'surgeon', 'nicu', 'picu'],
-      response: "We have full-time pediatric specialists, neonatologists for NICU, pediatric surgeons, cardiologists, and emergency intensivists available 24/7. Check our Doctors page for the complete roster."
+      keywords: ['doctor', 'team', 'specialist', 'pediatrician', 'surgeon', 'nicu', 'picu'],
+      response: "We have 20 Years of Trust with full-time pediatric specialists, neonatologists for NICU, pediatric surgeons, cardiologists, and emergency intensivists available 24/7. Check our **Our Team** page for the complete roster."
     },
     {
-      keywords: ['scheme', 'insurance', 'ntr', 'vaidya', 'ehs', 'free', 'cost'],
-      response: "✅ **Dr. NTR Vaidya Seva & E.H.S Scheme**: We provide cashless and government-supported medical care for eligible families and government employees under Dr. NTR Vaidya Seva and EHS."
+      keywords: ['experience', 'trust', 'years', 'founder'],
+      response: "⭐ **20 Years of Trust & Quality Care**: Founded in 2006 by Chief Pediatrician Dr. S. Nizamuddin, Nizam's Little Star Children Hospital has served families in Nellore for over two decades."
     },
     {
       keywords: ['location', 'address', 'where', 'place', 'direction', 'court'],
@@ -47,7 +47,7 @@ function initChatbot() {
     }
   ];
 
-  const defaultResponse = "I am Stella, your virtual assistant at Nizam's Little Star Children Hospital. How can I help you today? You can ask about our 24/7 Emergency, Doctors, NICU/PICU, Dr. NTR Vaidya Seva scheme, or hospital address in Nellore.";
+  const defaultResponse = "I am Stella, your virtual assistant at Nizam's Little Star Children Hospital (20 Years of Trust & Quality Care). How can I help you today? You can ask about our 24/7 Emergency, Our Team of Doctors, NICU/PICU, or hospital address in Nellore.";
 
   function addMessage(text, type = 'bot') {
     const msg = document.createElement('div');
@@ -108,7 +108,7 @@ function initChatbot() {
         chipsContainer.innerHTML = `
           <button class="chat-chip" data-query="emergency">🚨 24/7 Emergency</button>
           <button class="chat-chip" data-query="appointment">📅 Book Appointment</button>
-          <button class="chat-chip" data-query="scheme">🏛️ NTR Vaidya Seva</button>
+          <button class="chat-chip" data-query="doctor">👨‍⚕️ Our Team</button>
           <button class="chat-chip" data-query="location">📍 Hospital Location</button>
         `;
         messagesContainer.appendChild(chipsContainer);
