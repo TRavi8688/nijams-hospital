@@ -15,11 +15,11 @@ function initChatbot() {
   const responses = [
     {
       keywords: ['appoint', 'book', 'schedul', 'consult'],
-      response: "You can book an appointment by calling our reception directly at **2315776** or **0861 - 2315776**, sending a WhatsApp message to **9177363774**, or submitting the online booking form on our Contact page."
+      response: "You can book an appointment by calling our reception directly at **0861 - 2315777** or **0861 - 2315776**, sending a WhatsApp message to **9177363774**, or submitting the online booking form on our Contact page."
     },
     {
       keywords: ['emergency', 'urgent', 'casualty', 'trauma', 'serious'],
-      response: "🚨 **24/7 Emergency & NICU Hotline**: Please call **2315776** or WhatsApp **9177363774** immediately! Our Emergency Department is open 24 hours at Near Madras Busstand, Opp: District Court, Nellore."
+      response: "🚨 **24/7 Emergency & NICU Hotline**: Please call **0861 - 2315777** / **0861 - 2315776** or WhatsApp **9177363774** immediately! Our Emergency Department is open 24 hours at Near Madras Busstand, Opp: District Court, Nellore."
     },
     {
       keywords: ['doctor', 'team', 'specialist', 'pediatrician', 'surgeon', 'nicu', 'picu'],
@@ -31,11 +31,11 @@ function initChatbot() {
     },
     {
       keywords: ['location', 'address', 'where', 'place', 'direction', 'court'],
-      response: "📍 **Hospital Address**:\nNear Madras Busstand, Opp: District Court, Nellore – 524001, Andhra Pradesh.\nLandlines: **2315776**"
+      response: "📍 **Hospital Address**:\nNear Madras Busstand, Opp: District Court, Nellore – 524001, Andhra Pradesh.\nLandlines: **0861 - 2315777**, **0861 - 2315776**"
     },
     {
       keywords: ['ambulance', 'transport', 'vehicle'],
-      response: "🚑 **24/7 Ambulance Service**: Equipped with neonatal life support, central oxygen, and emergency transport. Call **9177363774** or **2315776** for immediate dispatch."
+      response: "🚑 **24/7 Ambulance Service**: Equipped with neonatal life support, central oxygen, and emergency transport. Call **0861 - 2315777**, **0861 - 2315776**, or WhatsApp **9177363774** for immediate assistance."
     },
     {
       keywords: ['timing', 'hour', 'open', 'time', 'sunday'],
@@ -47,7 +47,7 @@ function initChatbot() {
     }
   ];
 
-  const defaultResponse = "I am Stella, your virtual assistant at Nizam's Little Star Children Hospital (20 Years of Trust & Quality Care). How can I help you today? You can ask about our 24/7 Emergency, Our Team of Doctors, NICU/PICU, or hospital address in Nellore.";
+  const defaultResponse = "I am your virtual assistant at Nizam's Little Star Children Hospital (20 Years of Trust & Quality Care). How can I help you today? You can ask about our 24/7 Emergency, Our Team of Doctors, NICU/PICU, or hospital address in Nellore.";
 
   function addMessage(text, type = 'bot') {
     const msg = document.createElement('div');
@@ -101,7 +101,7 @@ function initChatbot() {
     if (isHidden) {
       if (!greeted) {
         greeted = true;
-        addMessage("Hello! 👋 I'm **Stella**, your virtual helper at **Nizam's Little Star Children Hospital (Nellore)**. How can I assist you today?", 'bot');
+        addMessage("Hello! 👋 Welcome to **Nizam's Little Star Children Hospital (Nellore)**. How can I assist you today?", 'bot');
         
         const chipsContainer = document.createElement('div');
         chipsContainer.className = 'chat-quick-replies';
