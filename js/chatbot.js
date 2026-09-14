@@ -27,7 +27,7 @@ function initChatbot() {
     },
     {
       keywords: ['experience', 'trust', 'years', 'founder'],
-      response: "⭐ **20 Years of Trust & Quality Care**: Founded in 2006 by Chief Pediatrician Dr. S. Nizamuddin, Nizam's Little Star Children Hospital has served families in Nellore for over two decades."
+      response: "⭐ **20 Years of Trust & Quality Care**: Founded in 2006 by Chief Pediatrician **Dr. Mohammed Nizam** (M.B.B.S., D.C.H., NLS Manchester UK, MRCPCH London UK), Nizam's Little Star Children Hospital has served families in Nellore for over two decades."
     },
     {
       keywords: ['location', 'address', 'where', 'place', 'direction', 'court'],

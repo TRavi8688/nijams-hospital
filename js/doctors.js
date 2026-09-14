@@ -3,13 +3,13 @@
 const doctorsData = [
   {
     id: 1,
-    name: 'Dr. S. Nizamuddin',
+    name: 'Dr. Mohammed Nizam',
     specialty: 'Founder & Chief Consultant - Neonatal ICU (NICU) & Pediatrics',
-    credentials: 'MBBS, MD (Pediatrics), Fellowship in Neonatology',
+    credentials: 'M.B.B.S., (Osm.) D.C.H., NLS (Manchester, UK), MRCPCH (London, UK)',
     experience: '20+ Years Experience',
     rating: '5.0',
     days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    initials: 'SN',
+    initials: 'MN',
     image: 'assets/dr-nizam.png'
   }
 ];
