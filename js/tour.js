@@ -4,9 +4,9 @@ const tourRooms = [
   {
     id: 1,
     name: "Nizam's Little Star Hospital Building",
-    category: 'Hospital Exterior',
+    category: 'Hospital',
     image: 'assets/hospital-building.png',
-    desc: 'Main hospital building located near Madras Busstand, Opp: District Court in Nellore, equipped with 24/7 emergency entrance.'
+    desc: 'Main hospital building located near Madras Busstand, Opp: District Court in Nellore, equipped with 24/7 hospital and emergency care.'
   },
   {
     id: 2,
