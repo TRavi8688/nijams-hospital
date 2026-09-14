@@ -54,7 +54,7 @@ function initDoctors() {
         ${doc.image 
           ? `<div class="doctor-avatar notranslate" translate="no" style="width:160px;height:160px;border-radius:50%;overflow:hidden;padding:0;border:3.5px solid var(--accent-yellow);box-shadow:0 8px 20px rgba(0,0,0,0.15);margin:0 auto 15px auto;"><img src="${doc.image}" alt="${doc.name}" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>`
           : `<div class="doctor-avatar notranslate" translate="no">${doc.initials}</div>`
-        }`
+        }
         <h3 class="notranslate" translate="no">${doc.name}</h3>
         <div class="doctor-specialty">${doc.specialty}</div>
         <div class="doctor-creds"><span class="notranslate" translate="no">${doc.credentials}</span> • ${doc.experience}</div>
