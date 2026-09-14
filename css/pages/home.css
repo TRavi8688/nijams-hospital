@@ -428,7 +428,7 @@
 
 @media (max-width: 768px) {
   .hero { padding: var(--space-lg) 0 calc(var(--space-xl) + 20px) 0; }
-  .hero-badge { font-size: 0.8rem; text-align: center; }
+  .hero-badge { font-size: 0.72rem; text-align: center; white-space: nowrap; padding: 6px 12px; }
   .hero-stats { flex-wrap: wrap; gap: var(--space-sm); justify-content: space-around; }
   .baby-frame-wrapper { width: 240px; height: 240px; }
   .floating-badges {
