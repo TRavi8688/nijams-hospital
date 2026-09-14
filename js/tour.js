@@ -3,45 +3,45 @@
 const tourRooms = [
   {
     id: 1,
-    name: 'Child-Friendly Consultations',
-    category: 'Outpatient Clinic',
-    image: 'assets/gallery-doctor-care.jpg',
-    desc: 'Welcoming consultation suites designed with cheerful colors and child-friendly seating to ensure a stress-free checkup.'
+    name: "Nizam's Little Star Hospital Building",
+    category: 'Hospital Exterior',
+    image: 'assets/hospital-building.png',
+    desc: 'Main hospital building located near Madras Busstand, Opp: District Court in Nellore, equipped with 24/7 emergency entrance.'
   },
   {
     id: 2,
-    name: 'Neonatal Intensive Care (Level III NICU)',
+    name: 'Level III Neonatal Intensive Care Unit (NICU)',
     category: 'Intensive Care',
-    image: 'assets/gallery-nicu-care.jpg',
-    desc: 'Advanced infant incubators with preterm ventilator support, phototherapy, exchange transfusion, and 24/7 neonatologist monitoring.'
+    image: 'assets/nicu-real-1.png',
+    desc: 'Advanced infant incubators with ventilator support, phototherapy units, exchange transfusion, and 24/7 neonatologist monitoring.'
   },
   {
     id: 3,
-    name: '24/7 Pediatric Emergency Center',
-    category: 'Emergency & Trauma',
-    image: 'assets/gallery-emergency.jpg',
-    desc: 'Round-the-clock emergency casualty with dedicated pediatric resuscitation beds, multi-parameter monitors, and rapid triage.'
+    name: 'Modular Operation Theatre',
+    category: 'Surgical Suite',
+    image: 'assets/operation-theatre.png',
+    desc: 'Ultra-modern sterile modular surgical theater fully equipped for pediatric surgeries and emergency procedures.'
   },
   {
     id: 4,
-    name: 'Pediatric Wellness & Play Lounge',
-    category: 'Child Care Area',
-    image: 'assets/gallery-play-area.jpg',
-    desc: 'Colorful recovery lounges equipped with toys, books, and gentle lighting to comfort children and families during hospital visits.'
+    name: 'Pediatric ICU (PICU) & Inpatient Ward',
+    category: 'Inpatient Care',
+    image: 'assets/inpatient-ward.png',
+    desc: 'Clean, well-equipped pediatric ward with vital monitors, oxygen lines, and round-the-clock nursing care.'
   },
   {
     id: 5,
-    name: '24/7 Dedicated Oxygen Ambulance',
-    category: 'Emergency Transport',
-    image: 'assets/gallery-emergency.jpg',
-    desc: 'Equipped with transport incubators, neonatal oxygen support, and emergency vital equipment for rapid patient transit.'
+    name: '24/7 Specialized NICU Patient Care',
+    category: 'Neonatal Care',
+    image: 'assets/nicu-real-2.jpg',
+    desc: 'Dedicated nursing staff and pediatric specialists delivering round-the-clock monitoring and compassionate care for newborns.'
   },
   {
     id: 6,
-    name: '24 Hours Digital Lab & Mobile X-Ray',
-    category: 'Diagnostics',
-    image: 'assets/gallery-nicu-care.jpg',
-    desc: 'Fully automated biochemistry analyzers, hematology lab, and mobile bedside digital X-Ray for rapid emergency diagnostic results.'
+    name: 'NICU Infrastructure & Oxygen Support Unit',
+    category: 'Hospital Facilities',
+    image: 'assets/nicu-real-3.png',
+    desc: 'Fully equipped neonatal facility with central oxygen, multi-parameter monitors, and sterile environment.'
   }
 ];
 

@@ -4,83 +4,13 @@ const doctorsData = [
   {
     id: 1,
     name: 'Dr. S. Nizamuddin',
-    specialty: 'Chief Consultant - Neonatal ICU (NICU) & Pediatrics',
+    specialty: 'Founder & Chief Consultant - Neonatal ICU (NICU) & Pediatrics',
     credentials: 'MBBS, MD (Pediatrics), Fellowship in Neonatology',
     experience: '20+ Years Experience',
     rating: '5.0',
     days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     initials: 'SN',
-    image: 'assets/founder-doctor.jpg'
-  },
-  {
-    id: 2,
-    name: 'Dr. K. Ramesh Kumar',
-    specialty: 'Pediatric Intensive Care (PICU)',
-    credentials: 'MBBS, MD (Pediatrics), DNB (PICU)',
-    experience: '14+ Years Experience',
-    rating: '4.9',
-    days: ['Mon', 'Wed', 'Fri', 'Sat'],
-    initials: 'RK'
-  },
-  {
-    id: 3,
-    name: 'Dr. P. Swathi Reddy',
-    specialty: 'Pediatric Surgery',
-    credentials: 'MBBS, MS (General Surgery), MCh (Pediatric Surgery)',
-    experience: '12+ Years Experience',
-    rating: '4.9',
-    days: ['Tue', 'Thu', 'Sat'],
-    initials: 'SR'
-  },
-  {
-    id: 4,
-    name: 'Dr. M. Venkata Rao',
-    specialty: 'Pediatric Cardiology',
-    credentials: 'MBBS, MD, DM (Cardiology)',
-    experience: '15+ Years Experience',
-    rating: '4.8',
-    days: ['Mon', 'Wed', 'Fri'],
-    initials: 'VR'
-  },
-  {
-    id: 5,
-    name: 'Dr. A. Madhavi Latha',
-    specialty: 'General Pediatrics & Immunization',
-    credentials: 'MBBS, DCH, DNB (Pediatrics)',
-    experience: '16+ Years Experience',
-    rating: '5.0',
-    days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    initials: 'ML'
-  },
-  {
-    id: 6,
-    name: 'Dr. T. Rajesh Naidu',
-    specialty: 'Pediatric Pulmonology & Asthma',
-    credentials: 'MBBS, MD (Pediatrics)',
-    experience: '10+ Years Experience',
-    rating: '4.8',
-    days: ['Tue', 'Thu', 'Sat'],
-    initials: 'RN'
-  },
-  {
-    id: 7,
-    name: 'Dr. G. Haritha',
-    specialty: 'Pediatric Neurology & Seizures',
-    credentials: 'MBBS, MD, DM (Neurology)',
-    experience: '11+ Years Experience',
-    rating: '4.9',
-    days: ['Mon', 'Thu', 'Sat'],
-    initials: 'GH'
-  },
-  {
-    id: 8,
-    name: 'Dr. B. Suresh',
-    specialty: 'Pediatric Orthopedics',
-    credentials: 'MBBS, MS (Ortho), Fellowship Pediatric Orthopedics',
-    experience: '13+ Years Experience',
-    rating: '4.7',
-    days: ['Wed', 'Fri', 'Sat'],
-    initials: 'BS'
+    image: 'assets/dr-nizam.png'
   }
 ];
 
@@ -120,11 +50,11 @@ function initDoctors() {
     if (noResults) noResults.hidden = true;
 
     grid.innerHTML = filtered.map(doc => `
-      <div class="doctor-card reveal visible">
+      <div class="doctor-card reveal visible" style="text-align:center;">
         ${doc.image 
-          ? `<div class="doctor-avatar notranslate" translate="no" style="width:130px;height:165px;border-radius:18px;overflow:hidden;padding:0;"><img src="${doc.image}" alt="${doc.name}" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>`
+          ? `<div class="doctor-avatar notranslate" translate="no" style="width:160px;height:160px;border-radius:50%;overflow:hidden;padding:0;border:3.5px solid var(--accent-yellow);box-shadow:0 8px 20px rgba(0,0,0,0.15);margin:0 auto 15px auto;"><img src="${doc.image}" alt="${doc.name}" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>`
           : `<div class="doctor-avatar notranslate" translate="no">${doc.initials}</div>`
-        }
+        }`
         <h3 class="notranslate" translate="no">${doc.name}</h3>
         <div class="doctor-specialty">${doc.specialty}</div>
         <div class="doctor-creds"><span class="notranslate" translate="no">${doc.credentials}</span> • ${doc.experience}</div>
