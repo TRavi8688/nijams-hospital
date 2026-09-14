@@ -5,10 +5,11 @@
   background: linear-gradient(90deg, #0F296B 0%, #1D4ED8 100%);
   color: #FFFFFF;
   font-size: 0.88rem;
-  padding: 9px 0;
+  padding: 8px 0;
   position: relative;
   z-index: 1000;
-  border-bottom: 2px solid var(--accent-yellow);
+  border-bottom: none;
+  box-shadow: 0 2px 10px rgba(15, 41, 107, 0.15);
 }
 
 .emergency-bar-inner {
@@ -17,6 +18,12 @@
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.emergency-bar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .emergency-bar span {
@@ -685,22 +692,32 @@
 }
 
 @media (max-width: 768px) {
+  .emergency-bar { padding: 7px 0; font-size: 0.8rem; }
+  .emergency-bar-inner { justify-content: center; text-align: center; gap: 6px; }
+  .emergency-bar-buttons { display: none !important; }
   .mobile-bottom-bar { display: flex; }
   body { padding-bottom: 60px; }
   .back-to-top { bottom: 75px; right: 16px; width: 44px; height: 44px; }
   .chat-widget { bottom: 75px; left: 16px; }
-  .emergency-bar-inner { justify-content: center; text-align: center; }
   .scheme-card { flex-direction: column; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
   .real-photos-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  .container { padding: 0 16px; }
-  .section { padding: var(--space-2xl) 0; }
-  .footer-grid { grid-template-columns: 1fr; }
+  .container { padding: 0 14px; }
+  .section { padding: var(--space-xl) 0; }
+  .nav-logo { gap: 8px; }
+  .nav-logo img { width: 38px; height: 38px; }
+  .nav-logo div div:first-child { font-size: 1rem !important; }
+  .nav-logo div div:nth-child(2) { font-size: 0.65rem !important; }
+  .nav-logo div div:nth-child(3) { font-size: 0.58rem !important; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-brand { text-align: center; }
+  .footer-brand div { justify-content: center; }
+  .footer-contact address p { justify-content: center; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-  .chat-panel { width: calc(100vw - 32px); height: 380px; }
+  .chat-panel { width: calc(100vw - 24px); height: 380px; }
   .btn-lg { width: 100%; }
 }
 
