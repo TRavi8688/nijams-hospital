@@ -19,7 +19,7 @@ const tourRooms = [
     id: 3,
     name: 'Modular Operation Theatre',
     category: 'Surgical Suite',
-    image: 'assets/operation-theatre.png',
+    image: 'assets/operation-theatre-new.jpg',
     desc: 'Ultra-modern sterile modular surgical theater fully equipped for pediatric surgeries and emergency procedures.'
   },
   {

@@ -159,7 +159,7 @@ function injectMobileBottomBar() {
   const bar = document.createElement('div');
   bar.className = 'mobile-bottom-bar';
   bar.innerHTML = `
-    <a href="tel:08612315777" class="mobile-bar-call" aria-label="Call Hospital">
+    <a href="tel:08612315776" class="mobile-bar-call" aria-label="Call Hospital">
       <i class="fas fa-phone-alt"></i>
       <span>Call Now</span>
     </a>
