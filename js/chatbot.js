@@ -35,7 +35,7 @@ function initChatbot() {
     },
     {
       keywords: ['ambulance', 'transport', 'vehicle'],
-      response: "🚑 **24/7 Ambulance Service**: Equipped with neonatal life support, central oxygen, and emergency transport. Call **0861 - 2315777**, **0861 - 2315776**, or WhatsApp **9177363774** for immediate assistance."
+      response: "🚑 **Dedicated Ambulance Service**: Equipped with neonatal life support, central oxygen, and emergency transport. Call **0861 - 2315777**, **0861 - 2315776**, or WhatsApp **9177363774** for immediate assistance."
     },
     {
       keywords: ['timing', 'hour', 'open', 'time', 'sunday'],

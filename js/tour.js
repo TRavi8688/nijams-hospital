@@ -10,7 +10,7 @@ const tourRooms = [
   },
   {
     id: 2,
-    name: 'Level III Neonatal Intensive Care Unit (NICU)',
+    name: 'Neonatal Intensive Care Unit (NICU)',
     category: 'Intensive Care',
     image: 'assets/nicu-real-1.png',
     desc: 'Advanced infant incubators with ventilator support, phototherapy units, exchange transfusion, and 24/7 neonatologist monitoring.'
