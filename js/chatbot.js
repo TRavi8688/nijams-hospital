@@ -44,6 +44,10 @@ function initChatbot() {
     {
       keywords: ['vaccin', 'immuniz', 'shot'],
       response: "💉 **Vaccination Clinic**: All newborn and pediatric vaccines from birth to 18 years are available Mon–Sat (9 AM – 8 PM)."
+    },
+    {
+      keywords: ['insurance', 'cashless', 'tpa', 'mediclaim', 'claim', 'policy'],
+      response: "💳 **Cashless Health Insurance Accepted**: Nizam's Little Star Children Hospital accepts all major health insurance policies & TPAs for cashless inpatient treatment. Our insurance desk assists parents with fast pre-authorizations and claims. Call **0861 - 2315777** or WhatsApp **9177363774** for help."
     }
   ];
 
